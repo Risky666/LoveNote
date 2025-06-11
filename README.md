@@ -21,7 +21,7 @@ Aplikasi ini cocok untuk digunakan di **localhost** atau lab virtual (seperti Vi
 
 | Jenis Celah           | Deskripsi Singkat |
 |-----------------------|-------------------|
-| 🔓 SQL Injection      | Input form login dan search rentan terhadap injeksi SQL |
+| 🔓 SQL Injection      | form login rentan terhadap injeksi SQL |
 | 🖼️ File Upload Bypass | Tidak ada validasi MIME-type/file extension |
 | 🐛 Stored XSS         | Input pesan tamu langsung ditampilkan tanpa disanitasi |
 
