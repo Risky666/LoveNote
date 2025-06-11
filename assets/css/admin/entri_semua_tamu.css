@@ -1,0 +1,157 @@
+
+:root {
+    --primary-color: #16a085;      /* Hijau utama */
+    --primary-hover: #1abc9c;      /* Hijau hover */
+    --danger-color: #e74c3c;       /* Merah utama */
+    --danger-hover: #c0392b;       /* Merah hover */
+    --background-color: #2c3e50;   /* Background gelap */
+    --card-color: #34495e;         /* Warna kartu/baris */
+    --text-color: #ecf0f1;         /* Warna teks */
+    --border-radius: 0px;          /* Radius sudut */
+    --transition-speed: 0.3s;      /* Kecepatan transisi */
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    padding: 30px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+
+h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+    background-color: transparent;
+}
+
+/* Header cells */
+th, td {
+    padding: 14px 18px;
+    text-align: left;
+}
+
+th {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+}
+
+/* Row styling */
+tr {
+    background-color: var(--card-color);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    border-radius: var(--border-radius);
+}
+
+tr td {
+    border: none;
+}
+
+/* Hover effect for rows */
+tr:hover {
+    background-color: var(--primary-hover);
+    cursor: default;
+}
+
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: var(--border-radius);
+    border: 1px solid #5a6b7c;
+    background-color: #3b556e;
+    color: var(--text-color);
+    font-size: 15px;
+    transition: border-color var(--transition-speed);
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background-color: #2f455a;
+}
+
+
+.action-cell {
+    white-space: nowrap;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+
+a {
+    font-weight: 600;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: var(--border-radius);
+    transition: background-color var(--transition-speed);
+    color: var(--text-color);
+    background-color: var(--primary-color);
+}
+
+
+a:hover {
+    background-color: var(--primary-hover);
+    color: white;
+}
+
+
+a[href*="hapus"] {
+    background-color: var(--danger-color);
+    color: white;
+}
+
+a[href*="hapus"]:hover {
+    background-color: var(--danger-hover);
+    color: white;
+}
+
+a.kembali {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 12px 30px;
+    background-color: var(--primary-color);
+    font-weight: 700;
+    font-size: 16px;
+    text-align: center;
+    border-radius: var(--border-radius);
+}
+
+a.kembali:hover {
+    background-color: var(--primary-hover);
+}
+
+
+@media (max-width: 600px) {
+    table, th, td {
+        font-size: 14px;
+    }
+
+    .action-cell {
+        flex-direction: column;
+        gap: 6px;
+    }
+}

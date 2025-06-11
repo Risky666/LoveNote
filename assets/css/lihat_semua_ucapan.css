@@ -1,0 +1,114 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Georgia', serif;
+    background: linear-gradient(to bottom right, #fefbf6, #e8e4d8);
+    padding: 40px 20px;
+    color: #3e4c42;
+}
+
+/* Container */
+.container {
+    max-width: 900px;
+    margin: auto;
+    background-color: #ffffffd9;
+    border-radius: 20px;
+    padding: 40px 30px 30px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    backdrop-filter: blur(6px);
+    border: 1px solid #e1dcd1;
+}
+
+/* Header */
+h2 {
+    color: #5d5c5a;
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 36px;
+    font-weight: bold;
+    font-family: 'Brush Script MT', cursive;
+}
+
+h2 .emoji {
+    font-size: 36px;
+    vertical-align: middle;
+}
+
+/* Ucapan Card */
+.ucapan {
+    background-color: #fffbf2;
+    border: 1px solid #e3d9c6;
+    border-left: 5px solid #c8b36e;
+    border-radius: 14px;
+    padding: 20px 25px;
+    margin-bottom: 10px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.ucapan:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.ucapan strong {
+    color: #5a5442;
+    font-size: 19px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.ucapan p {
+    margin: 10px 0;
+    font-size: 17px;
+    color: #555;
+    line-height: 1.6;
+    font-style: italic;
+}
+
+.ucapan small {
+    display: block;
+    margin-top: 10px;
+    color: #a8a29e;
+    font-size: 14px;
+}
+
+
+/* Pesan kosong */
+.kosong {
+    text-align: center;
+    margin-top: 60px;
+    font-size: 20px;
+    color: #999;
+    font-style: italic;
+}
+
+/* Tombol Kembali */
+.kembali {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.btn-kembali {
+    background: linear-gradient(135deg, #c8b36e, #a79248);
+    color: #fff;
+    padding: 12px 28px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    box-shadow: 0 5px 14px rgba(0,0,0,0.1);
+    transition: background 0.3s, transform 0.3s;
+}
+
+.btn-kembali:hover {
+    background: linear-gradient(135deg, #b19f54, #938039);
+    transform: scale(1.08);
+}

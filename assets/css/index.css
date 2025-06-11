@@ -1,0 +1,127 @@
+/* === index.css (Sage Green + Ivory + Gold — Super Wedding Edition) === */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Playfair Display', serif;
+    background: linear-gradient(135deg, #fdfcf8 0%, #e6ebe0 100%);
+    color: #2e2e2e;
+    overflow: hidden;
+    position: relative;
+    min-height: 100vh;
+}
+
+/* Bokeh light background animation */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: radial-gradient(circle, rgba(218,165,32,0.3) 1px, transparent 2px),
+                radial-gradient(circle, rgba(218,165,32,0.2) 1px, transparent 3px);
+    background-size: 80px 80px;
+    animation: bokehMove 50s linear infinite;
+    z-index: 0;
+    opacity: 0.25;
+}
+
+@keyframes bokehMove {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    100% {
+        transform: translate(-100px, -100px) rotate(360deg);
+    }
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+    max-width: 720px;
+    margin: 100px auto;
+    padding: 48px;
+    background: rgba(230, 235, 224, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 0 40px rgba(218, 165, 32, 0.4);
+    text-align: center;
+    border: 1px solid #d0d0d0;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.container:hover {
+    transform: scale(1.015);
+    box-shadow: 0 0 60px rgba(218, 165, 32, 0.55);
+}
+
+h1 {
+    font-size: 2.8rem;
+    margin-bottom: 30px;
+    color: #78866b;
+    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.8);
+    animation: glow 3s infinite ease-in-out;
+}
+
+@keyframes glow {
+    0%, 100% {
+        text-shadow: 0 0 8px #daa520, 0 0 20px #f0e68c;
+    }
+    50% {
+        text-shadow: 0 0 12px #e6c96b, 0 0 30px #fff2b3;
+    }
+}
+
+a {
+    display: inline-block;
+    margin: 12px;
+    padding: 12px 28px;
+    color: #ffffff;
+    text-decoration: none;
+    background: linear-gradient(145deg, #daa520, #f0c849);
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 8px 15px rgba(218, 165, 32, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+a::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 200%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: skewX(-45deg);
+    transition: left 0.6s ease;
+}
+
+a:hover::before {
+    left: 100%;
+}
+
+a:hover {
+    transform: scale(1.05);
+    background: linear-gradient(145deg, #f5da83, #ffeb99);
+    color: #2e2e2e;
+}
+
+/* Responsiveness */
+@media (max-width: 700px) {
+    .container {
+        padding: 32px 24px;
+        margin: 60px 16px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    a {
+        font-size: 1rem;
+        padding: 10px 24px;
+    }
+}

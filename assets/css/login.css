@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap');
+
+body {
+    font-family: 'Playfair Display', 'Segoe UI', Tahoma, Geneva, Verdana, serif;
+    background-color: #fdfcf8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 20px;
+    color: #2e2e2e;
+    box-sizing: border-box;
+    animation: fadeIn 1s ease-in;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background sparkle lembut */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 200%;
+    height: 200%;
+    background-image: radial-gradient(#daa520 1px, transparent 1px),
+                      radial-gradient(#e6c96b 1px, transparent 1px);
+    background-size: 80px 80px;
+    opacity: 0.06;
+    animation: sparkleFlow 60s linear infinite;
+    z-index: 0;
+}
+
+@keyframes sparkleFlow {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(-100px, -100px);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+form {
+    background-color: rgba(230, 235, 224, 0.96);
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgba(218, 165, 32, 0.35);
+    width: 100%;
+    max-width: 420px;
+    margin: auto;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+form:hover {
+    transform: scale(1.015);
+    box-shadow: 0 0 40px rgba(218, 165, 32, 0.45);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #78866b;
+    font-size: 1.7rem;
+    font-weight: 700;
+    animation: glow 3s infinite ease-in-out;
+}
+
+@keyframes glow {
+    0%, 100% {
+        text-shadow: 0 0 6px #f2dfa1;
+    }
+    50% {
+        text-shadow: 0 0 12px #e6c96b;
+    }
+}
+
+label {
+    display: block;
+    margin-top: 18px;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #78866b;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px 10px;
+    margin-top: 7px;
+    border: 1.5px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #a3b18a;
+    outline: none;
+    box-shadow: 0 0 8px rgba(163, 177, 138, 0.4);
+}
+
+input:invalid {
+    border-color: #d88c00;
+    background-color: #fff8e1;
+}
+
+input::placeholder {
+    color: #b0b0a8;
+    opacity: 1;
+    font-style: italic;
+}
+
+button {
+    margin-top: 28px;
+    width: 100%;
+    padding: 12px 0;
+    background: linear-gradient(135deg, #daa520, #f5d670);
+    border: none;
+    color: #2e2e2e;
+    font-size: 1.15rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(218, 165, 32, 0.35);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+button::after {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 200%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.15);
+    transform: skewX(-45deg);
+    transition: left 0.6s ease;
+}
+
+button:hover::after {
+    left: 100%;
+}
+
+button:hover {
+    background-color: #e6c96b;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+/* Responsive */
+@media (max-width: 360px) {
+    form {
+        padding: 24px;
+        max-width: 95%;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    button {
+        font-size: 1rem;
+        padding: 10px 0;
+    }
+}

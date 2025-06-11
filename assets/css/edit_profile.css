@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Playfair Display', 'Segoe UI', Tahoma, Geneva, Verdana, serif;
+    background-color: #fdfcf8;
+    color: #2f3e34;
+    padding: 20px;
+    animation: fadeIn 1s ease-in-out;
+    overflow-x: hidden;
+}
+
+/* Animasi masuk */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Background lembut sparkle */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 200%;
+    height: 200%;
+    background-image: radial-gradient(#daa520 1px, transparent 1px),
+                      radial-gradient(#e6c96b 1px, transparent 1px);
+    background-size: 80px 80px;
+    opacity: 0.05;
+    animation: sparkleFlow 60s linear infinite;
+    z-index: 0;
+}
+
+@keyframes sparkleFlow {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(-100px, -100px); }
+}
+
+/* Kontainer utama */
+.edit-profile-container {
+    background-color: rgba(224, 229, 218, 0.96);
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 500px;
+    width: 90%;
+    margin: 60px auto;
+    box-shadow: 0 12px 30px rgba(191, 160, 70, 0.15);
+    border: 1px solid #c2ccb9;
+    position: relative;
+    z-index: 1;
+}
+
+/* Judul */
+.edit-profile-container h2 {
+    text-align: center;
+    color: #bfa046;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+    text-shadow: 0 0 6px rgba(191, 160, 70, 0.2);
+}
+
+/* Label */
+label {
+    font-weight: bold;
+    display: block;
+    margin-top: 18px;
+    font-size: 1rem;
+    color: #445a44;
+}
+
+/* Input teks */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus {
+    border-color: #a3b18a;
+    outline: none;
+    box-shadow: 0 0 6px rgba(163, 177, 138, 0.3);
+}
+
+/* Upload file */
+.custom-file-input {
+    display: none;
+}
+
+.custom-file-label {
+    background-color: #fff;
+    border: 2px dashed #bfa046;
+    padding: 14px;
+    display: inline-block;
+    width: 100%;
+    border-radius: 12px;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 12px;
+    font-weight: bold;
+    color: #2f3e34;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.custom-file-label:hover {
+    background-color: #f9f6ec;
+    transform: scale(1.01);
+}
+
+/* Tombol Simpan */
+button[type="submit"] {
+    margin-top: 30px;
+    background: linear-gradient(135deg, #bfa046, #f0d37a);
+    color: #fff;
+    border: none;
+    padding: 14px 24px;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 1.05rem;
+    font-weight: bold;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 6px 12px rgba(218, 165, 32, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+button[type="submit"]::after {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 200%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.15);
+    transform: skewX(-45deg);
+    transition: left 0.6s ease;
+}
+
+button[type="submit"]:hover::after {
+    left: 100%;
+}
+
+button[type="submit"]:hover {
+    background-color: #9d8437;
+    transform: scale(1.03);
+}
+
+/* Link kembali */
+.back-link {
+    display: block;
+    text-align: center;
+    margin-top: 25px;
+    color: #bfa046;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+    color: #9d8437;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .edit-profile-container {
+        padding: 30px 20px;
+    }
+
+    .edit-profile-container h2 {
+        font-size: 1.5rem;
+    }
+
+    button[type="submit"] {
+        font-size: 1rem;
+        padding: 12px;
+    }
+
+    .custom-file-label {
+        padding: 12px;
+    }
+}

@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap');
+
+body {
+    background-color: #fdfcf8; /* Ivory */
+    font-family: 'Playfair Display', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 1s ease;
+    position: relative;
+    overflow: hidden;
+    color: #2f3e34;
+}
+
+/* Sparkle background */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 200%;
+    height: 200%;
+    background-image: radial-gradient(#daa520 1px, transparent 1px),
+                      radial-gradient(#e6c96b 1px, transparent 1px);
+    background-size: 80px 80px;
+    opacity: 0.05;
+    animation: sparkleFloat 60s linear infinite;
+    z-index: 0;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes sparkleFloat {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(-100px, -100px); }
+}
+
+/* Kontainer form utama */
+.container {
+    background-color: rgba(224, 229, 218, 0.96); /* Sage soft */
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 520px;
+    text-align: center;
+    border: 1px solid #c2ccb9;
+    position: relative;
+    z-index: 1;
+}
+
+/* Judul */
+h2 {
+    color: #bfa046;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    text-shadow: 0 0 6px rgba(191, 160, 70, 0.2);
+}
+
+/* Form */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 8px;
+    text-align: left;
+    font-size: 1rem;
+    color: #445a44;
+}
+
+textarea {
+    padding: 14px;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    resize: vertical;
+    margin-bottom: 20px;
+    font-size: 1em;
+    background-color: #fff;
+    transition: box-shadow 0.3s ease;
+}
+
+textarea:focus {
+    border-color: #a3b18a;
+    box-shadow: 0 0 6px rgba(163, 177, 138, 0.3);
+    outline: none;
+}
+
+/* Tombol submit */
+button[type="submit"] {
+    background: linear-gradient(135deg, #bfa046, #f0d37a);
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 30px;
+    font-size: 1.05em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 6px 12px rgba(218, 165, 32, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+button[type="submit"]::after {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 200%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: skewX(-45deg);
+    transition: left 0.6s ease;
+}
+
+button[type="submit"]:hover::after {
+    left: 100%;
+}
+
+button[type="submit"]:hover {
+    background-color: #9d8437;
+    transform: scale(1.05);
+}
+
+/* Halaman sukses */
+.success-message,
+.success-alert {
+    background-color: rgba(224, 229, 218, 0.95);
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    border: 2px solid #bfa046;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 520px;
+    margin: 40px auto;
+    animation: slideFadeIn 0.8s ease forwards;
+    position: relative;
+    z-index: 1;
+}
+
+.success-message p,
+.success-alert p {
+    font-size: 1.4em;
+    color: #2f3e34;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Link pada halaman sukses */
+.success-message a,
+.success-alert a {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #bfa046;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.success-message a:hover,
+.success-alert a:hover {
+    background-color: #9d8437;
+    transform: scale(1.05);
+}
+
+/* Animasi sukses */
+@keyframes slideFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsif */
+@media (max-width: 480px) {
+    .container,
+    .success-message,
+    .success-alert {
+        padding: 24px 16px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    textarea {
+        font-size: 0.95rem;
+    }
+
+    button[type="submit"],
+    .success-message a,
+    .success-alert a {
+        font-size: 0.95rem;
+        padding: 10px 20px;
+    }
+}

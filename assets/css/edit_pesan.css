@@ -1,0 +1,79 @@
+/* Reset dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f6f6f6; /* Ivory terang */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Judul halaman */
+h2 {
+    color: #4d6b57; /* Hijau Sage */
+    margin-bottom: 20px;
+    font-size: 26px;
+}
+
+/* Form styling */
+form {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.05);
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Textarea styling */
+textarea {
+    resize: vertical;
+    min-height: 120px;
+    font-size: 16px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Button submit */
+button[type="submit"] {
+    background-color: #c9b458; /* Gold */
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #b49e42;
+    transform: scale(1.05);
+}
+
+/* Link kembali */
+a {
+    margin-top: 20px;
+    display: inline-block;
+    text-decoration: none;
+    color: #4d6b57; /* Hijau Sage */
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #3c5545;
+}
